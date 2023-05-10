@@ -1,3 +1,3 @@
 # Sample Dotnet project
 - [x] ADDED TEAMCITY
-- [x] ADDED branch protectionss
+- [x] ADDED BRANCH protection
