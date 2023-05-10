@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Check for valid branches
       run: |
-        if [[ "$GITHUB_REF" != "refs/heads/hotfix-*" && "$GITHUB_REF" != "refs/heads/release-*" ]]; then
+        if [[ !startsWith(github.ref, 'refs/heads/release/')  && !startsWith(github.ref, 'refs/heads/hotfix/') ]]; then
           echo "This pull request can only be merged into the master branch from either the hotfix or release branch."
           exit 1
         fi
