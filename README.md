@@ -1,3 +1,4 @@
 # Sample Dotnet project
 - [x] ADDED TEAMCITY
-- [x] ADDED branch protections
+- [x] ADDED BRANCH protection
+- [x] Test release
