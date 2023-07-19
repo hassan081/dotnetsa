@@ -2,14 +2,18 @@ name: Check Source
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   merge:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Check for valid branches
-      if: (!startsWith(github.head_ref, 'refs/heads/release/') && startsWith(github.head_ref, 'refs/heads/hotfix/'))
       run: |
+        if [[ ${{ github.head_ref }} != refs/heads/release/* && ${{ github.head_ref }} != refs/heads/hotfix/* ]]; then
           echo "This pull request can only be merged into the master branch from either the hotfix or release branch."
           exit 1
+        f
