@@ -8,6 +8,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: echo
+      run: echo ${github.head_ref}
     - name: Check for valid branches
       if: (!startsWith(github.head_ref, 'refs/heads/release/') && startsWith(github.head_ref, 'refs/heads/hotfix/'))
       run: |
