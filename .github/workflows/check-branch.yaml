@@ -13,7 +13,7 @@ jobs:
 
     - name: Check for valid branches
       run: |
-        if [[ ${{ github.head_ref }} != refs/heads/release/* && ${{ github.head_ref }} != refs/heads/hotfix/* ]]; then
+        if [[ ${{github.head_ref}} != refs/heads/release/* && ${{github.head_ref}} != refs/heads/hotfix/* ]]; then
           echo "This pull request can only be merged into the master branch from either the hotfix or release branch."
           exit 1
         fi
